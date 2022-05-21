@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block main %}
+     <form action="/Menu" method="post">
+        <div class="container">
+            <h2>Menu</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-top">
+                    <img src="/static/images/products/BBC.jpg" class="card-img-top" style="height:300px; object-fit: cover;" alt="Basque Burnt Cheesecake">
+                    </div>
+                    <div class="product-bottom text-center">
+                        <h3>basque cheesecake</h3>
+                        <h5>$5</h5>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div class="product-top">
+                    <img src="/static/images/products/madeleine.jpg" class="card-img-top" style="height:300px; object-fit: cover;" alt="Madeleine">
+                    </div>
+                    <div class="product-bottom text-center">
+                        <h3>Madeleine</h3>
+                        <h5>$10</h5>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div class="product-top">
+                    <img src="/static/images/products/pizza.jpg" class="card-img-top" style="height:300px; object-fit: cover;" alt="Pizza">
+                    </div>
+                    <div class="product-bottom text-center">
+                        <h3>pizza</h3>
+                        <h5>$15</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

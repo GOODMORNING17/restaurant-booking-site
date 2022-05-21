@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookings
+{% endblock %}
+
+{% block main %}
+<h1>My Reservations</h1>
+<table style="width:100%" class="table table-striped">
+    <form method="post" action="cancel" class="inline">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Update</th>
+        </tr>
+    </thead>
+    {% for booking in bookings %}
+    <tr>
+        <td name="date">{{ booking["date"] }}</td>
+        <td name="time">{{ booking["time"]}}</td>
+        <input type="hidden" name="cancel" value={{ booking["slot_id"] }}>
+        <td><button type="submit" name="cancel" value = "cancel" class="link-button">Cancel</button></td>
+    </tr>
+    {% endfor %}
+    </form>
+</table>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="top">
+        <img class="image" src = "/static/images/Background.jpg">
+        <div class="overlay"></div>
+        <div class="heading"><br>
+        <br><br>
+            <h1>Welcome to homade</h1>
+        </div>
+    </div>
+    <br>
+    <br><br><br>
+
+    <div class="container p-5">
+
+      <div class="card main-card ">
+
+        <div class="tab-content" id="pills-tabContent">
+
+        <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="all-tab">
+
+              <div class="card card-blogs h-100 ">
+                <img src="/static/images/products/BBC.jpg" class="card-img-top" style="height:1000px; object-fit: cover;" alt="Basque Burnt Cheesecake">
+
+                <img src="/static/images/products/madeleine.jpg" class="card-img-top" style="height:1000px; object-fit: cover;" alt="Madeleine">
+
+                <img src="/static/images/products/pizza.jpg" class="card-img-top" style="height:1000px; object-fit: cover;" alt="Pizza">
+
+               <div class="card-body">
+                  <div class= "category">
+                  <h5 name ="card-name" class="card-name"></h5>
+                  <a href="/Reserve" class="btn btn-primary Reserve">Reserve</a>
+                </div>
+              </div>
+          </div>
+
+{% endblock %}

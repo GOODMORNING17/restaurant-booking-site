@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Customers_Booking
+{% endblock %}
+
+{% block main %}
+<h1>Admin</h1>
+    <form action="/Customers_Booking" method="post">
+        <div class="form-group">
+            <input type="date" name="date" min={{ today }}>
+        </div>
+        <div class="form-group">
+            <select name="timeslot">
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="1:00 PM">1:00 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="3:00 PM">3:00 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="8:00 PM">8:00 PM</option>
+                <option value="9:00 PM">9:00 PM</option>
+            </select>
+        </div>
+        <div class="form-group">
+           <button class="btn btn-dark" type="submit">Create Time Slot</button>
+        </div>
+    </form>
+    <h2>Reservations</h2>
+    <table style="width:100%" class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    {% for slot in slots %}
+    <tr>
+        <td>{{ slot["date"] }}</td>
+        <td>{{ slot["time"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <table style="width:100%" class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">contact</th>
+        </tr>
+    </thead>
+    {% for user in users %}
+    <tr>
+        <td>{{ user["name"] }}</td>
+        <td>{{ user["contact"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>Available Times</h2>
+    <table style="width:100%" class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    {% for available_slot in available_slots %}
+    <tr>
+        <td>{{ available_slot["date"] }}</td>
+        <td>{{ available_slot["time"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
